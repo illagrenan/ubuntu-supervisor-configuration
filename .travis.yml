@@ -5,9 +5,10 @@ python:
 before_install:
   - pip install --upgrade supervisor
   - sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisor.sh > supervisor.sh
+  - sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisord.conf > supervisord.conf
+  - sed 's?/etc/supervisor/?'`pwd`/'?' <supervisor.sh >supervisor_travis.sh
+  - mv supervisor_travis.sh supervisor.sh
   - sudo chmod +x supervisor.sh
-  - mkdir -p /etc/supervisor/
-  - sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisord.conf > /etc/supervisor/supervisord.conf
 
 script:
   - ./supervisor.sh status
