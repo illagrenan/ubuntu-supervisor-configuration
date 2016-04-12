@@ -24,8 +24,20 @@ sudo chmod +x /etc/init.d/supervisor
 sudo update-rc.d supervisor defaults
 ```
 
-5) Use it:
+5) Write example configuration
 
+```bash
+mkdir -p /etc/supervisor/
+sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisord.conf > /etc/supervisor/supervisord.conf
+```
+
+If you want your custom configuration, use built-in command:
+
+```bash
+echo_supervisord_conf > /etc/supervisord.conf
+```
+
+6) Use it:
 
 ```bash
 service supervisor stop
