@@ -5,13 +5,14 @@ python:
 
 before_install:
   - pip install --upgrade supervisor
-
-script:
   - sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisor.sh > /etc/init.d/supervisor
   - sudo chmod +x /etc/init.d/supervisor
   - sudo update-rc.d supervisor defaults
   - mkdir -p /etc/supervisor/
   - sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisord.conf > /etc/supervisor/supervisord.conf
+
+script:
+  - service supervisor status
 
 notifications:
   email:
