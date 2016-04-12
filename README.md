@@ -28,18 +28,34 @@ sudo update-rc.d supervisor defaults
 
 5) Write example configuration
 
+If you use this configuration, follow steps 6)+7)
+
 ```bash
 mkdir -p /etc/supervisor/
 sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisord.conf > /etc/supervisor/supervisord.conf
 ```
 
-If you want your custom configuration, use built-in command:
+If you want your custom configuration, use built-in command and skip steps 6)+7)
 
 ```bash
 echo_supervisord_conf > /etc/supervisord.conf
 ```
 
-6) Use it:
+6) Create log directory:
+
+```bash
+mkdir -p /var/log/supervisor
+```
+
+7) Create new group:
+
+See `chown=root:supervisor` in configuration.
+
+```bash
+groupadd supervisor
+```
+
+8) Use it:
 
 ```bash
 service supervisor stop
