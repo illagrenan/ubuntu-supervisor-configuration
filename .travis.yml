@@ -1,0 +1,19 @@
+language: python
+python:
+  - "2.7"
+  - "3.4"
+
+before_install:
+  - pip install --upgrade supervisor
+
+script:
+  - sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisor.sh > /etc/init.d/supervisor
+  - sudo chmod +x /etc/init.d/supervisor
+  - sudo update-rc.d supervisor defaults
+  - mkdir -p /etc/supervisor/
+  - sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisord.conf > /etc/supervisor/supervisord.conf
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
