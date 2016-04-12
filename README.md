@@ -1,5 +1,7 @@
 # ubuntu-supervisor-configuration
 
+[![Build Status](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration.svg?branch=master)](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration)
+
 1) Install supervisor:
 
 ```bash
