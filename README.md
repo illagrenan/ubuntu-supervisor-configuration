@@ -1,4 +1,4 @@
-# ubuntu-supervisor-configuration
+# Supervisor on Ubuntu 14.04 installed by pip
 
 [![Build Status](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration.svg?branch=master)](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration)
 
