@@ -6,7 +6,7 @@ before_install:
   - pip install --upgrade supervisor
   - sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisor.sh > supervisor.sh
   - sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisord.conf > supervisord.conf
-  - sed 's?/etc/supervisor/?'`pwd`/'?' <supervisor.sh >supervisor_travis.sh
+  - sed 's?/etc/supervisord.conf?'`pwd`/supervisord.conf'?' <supervisor.sh >supervisor_travis.sh
   - mv supervisor_travis.sh supervisor.sh
   - sudo chmod +x supervisor.sh
 
