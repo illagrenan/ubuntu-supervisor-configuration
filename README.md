@@ -55,7 +55,15 @@ See `chown=root:supervisor` in configuration.
 groupadd supervisor
 ```
 
-8) Use it:
+8) Fix supervisorctl
+
+More info here: http://stackoverflow.com/a/17036409/752142
+
+```bash
+ln -s /etc/supervisor/supervisord.conf /etc/supervisord.conf
+```
+
+9) Use it:
 
 ```bash
 service supervisor stop
