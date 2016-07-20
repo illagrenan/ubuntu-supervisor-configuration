@@ -2,14 +2,16 @@
 
 [![Build Status](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration.svg?branch=master)](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration)
 
-1) Install supervisor:
+How to install supervisor using pip on Ubuntu 14.04.x LTS. 
+
+1) Install pip and supervisor:
 
 ```bash
 easy_install --upgrade pip
-sudo pip install supervisor
+sudo pip install --upgrade supervisor
 ```
 
-2) Add init script:
+2) Add init script from this repository:
 ```bash
 sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisor.sh > /etc/init.d/supervisor
 ```
@@ -28,12 +30,16 @@ sudo update-rc.d supervisor defaults
 
 5) Write example configuration
 
-If you use this configuration, follow steps 6)+7)
+5A)
+
+If you use this configuration, **follow** steps 6)+7)
 
 ```bash
 mkdir -p /etc/supervisor/
 sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisord.conf > /etc/supervisor/supervisord.conf
 ```
+
+5B)
 
 If you want your custom configuration, use built-in command and skip steps 6)+7)
 
@@ -41,13 +47,13 @@ If you want your custom configuration, use built-in command and skip steps 6)+7)
 echo_supervisord_conf > /etc/supervisord.conf
 ```
 
-6) Create log directory:
+(only for 5A) 6) Create log directory:
 
 ```bash
 mkdir -p /var/log/supervisor
 ```
 
-7) Create new group:
+(only for 5A) 7) Create new group:
 
 See `chown=root:supervisor` in configuration.
 
