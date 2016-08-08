@@ -7,7 +7,7 @@
 **1) Install pip and supervisor:**
 
 ```bash
-easy_install --upgrade pip
+[sudo] pip install --upgrade pip
 sudo pip install --upgrade supervisor
 ```
 
@@ -16,7 +16,7 @@ sudo pip install --upgrade supervisor
 sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisor.sh > /etc/init.d/supervisor
 ```
 
-**3) Fix permissions:**
+**3) Add *‚execute‘* permission:**
 
 ```bash
 sudo chmod +x /etc/init.d/supervisor
@@ -41,7 +41,7 @@ sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configu
 
 **5B)**
 
-If you want your custom configuration, use built-in command and skip steps 6)+7)
+If you want your custom configuration, use built-in command and **skip** steps 6)+7)
 
 ```bash
 echo_supervisord_conf > /etc/supervisord.conf
