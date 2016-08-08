@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration.svg?branch=master)](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration)
 
-> How to install supervisor using pip on Ubuntu 14.04.x LTS. 
+> How to install supervisor using pip on Ubuntu 14.04.x/16.04.x LTS. 
 
 **1) Install pip and supervisor:**
 
