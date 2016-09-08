@@ -47,10 +47,11 @@ If you want your custom configuration, use built-in command and **skip** steps 6
 echo_supervisord_conf > /etc/supervisord.conf
 ```
 
-(only for 5A) **6) Create log directory:**
+(only for 5A) **6) Create log and conf directories:**
 
 ```bash
 mkdir -p /var/log/supervisor
+mkdir -p /etc/supervisor/conf.d/
 ```
 
 (only for 5A) **7) Create new group:**
