@@ -28,11 +28,13 @@ sudo chmod +x /etc/init.d/supervisor
 sudo update-rc.d supervisor defaults
 ```
 
-**5) Write example configuration**
+**5) Create main configuration file**
+
+You have two options: **5A)** Use configuration [file from this repository](https://github.com/illagrenan/ubuntu-supervisor-configuration/blob/master/supervisord.conf) ~OR~ **5B)** Use [standard supervisor configuration file](http://supervisord.org/installing.html#creating-a-configuration-file).
 
 **5A)**
 
-If you use this configuration, **follow** steps 6)+7)
+Do not forget to **follow** steps 6)+7)
 
 ```bash
 mkdir -p /etc/supervisor/
@@ -41,20 +43,20 @@ sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configu
 
 **5B)**
 
-If you want your custom configuration, use built-in command and **skip** steps 6)+7)
+**Skip** steps 6)+7)
 
 ```bash
 echo_supervisord_conf > /etc/supervisord.conf
 ```
 
-(only for 5A) **6) Create log and conf directories:**
+**(only for 5A) 6) Create log and conf directories:**
 
 ```bash
 mkdir -p /var/log/supervisor
 mkdir -p /etc/supervisor/conf.d/
 ```
 
-(only for 5A) **7) Create new group:**
+**(only for 5A) 7) Create new group:**
 
 See `chown=root:supervisor` in configuration.
 
@@ -79,5 +81,5 @@ service supervisor start
 
 ## Resources
 
-* http://serverfault.com/a/96500/100080
-* https://github.com/Supervisor/initscripts/blob/master/ubuntu
+* [http://serverfault.com/a/96500/100080](http://serverfault.com/a/96500/100080)
+* [https://github.com/Supervisor/initscripts/blob/master/ubuntu](https://github.com/Supervisor/initscripts/blob/master/ubuntu)
