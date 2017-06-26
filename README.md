@@ -1,8 +1,6 @@
-# Supervisor on Ubuntu 14.04/16.04 installed by pip
+# Tutorial how to install Supervisor on Ubuntu 14.04/16.04 (LTS versions) using pip
 
 [![Build Status](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration.svg?branch=master)](https://travis-ci.org/illagrenan/ubuntu-supervisor-configuration)
-
-> How to install supervisor using pip on Ubuntu 14.04.x/16.04.x LTS. 
 
 **1) Install pip and supervisor:**
 
@@ -12,9 +10,11 @@ sudo pip install --upgrade supervisor
 ```
 
 **2) Add init script from this repository:**
+
 ```bash
 sudo curl https://raw.githubusercontent.com/illagrenan/ubuntu-supervisor-configuration/master/supervisor.sh > /etc/init.d/supervisor
 ```
+:bulb: Before executing this command, you should [review `supervisor.sh`](https://github.com/illagrenan/ubuntu-supervisor-configuration/blob/master/supervisor.sh)
 
 **3) Add *‚execute‘* permission:**
 
@@ -30,7 +30,7 @@ sudo update-rc.d supervisor defaults
 
 **5) Create main configuration file**
 
-You have two options: **5A)** Use configuration [file from this repository](https://github.com/illagrenan/ubuntu-supervisor-configuration/blob/master/supervisord.conf) ~OR~ **5B)** Use [standard supervisor configuration file](http://supervisord.org/installing.html#creating-a-configuration-file).
+You have two options: **5A)** Use configuration [file from this repository](https://github.com/illagrenan/ubuntu-supervisor-configuration/blob/master/supervisord.conf) *OR* **5B)** Use [standard supervisor configuration file](http://supervisord.org/installing.html#creating-a-configuration-file).
 
 **5A)**
 
@@ -81,5 +81,6 @@ service supervisor start
 
 ## Resources
 
+* [Supervisor homepage and docs](http://supervisord.org/)
 * [http://serverfault.com/a/96500/100080](http://serverfault.com/a/96500/100080)
 * [https://github.com/Supervisor/initscripts/blob/master/ubuntu](https://github.com/Supervisor/initscripts/blob/master/ubuntu)
